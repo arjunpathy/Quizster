@@ -147,11 +147,11 @@
   width: 50px;
 }
 .progresss {
-  height: 20px; /* Ensure this is visible */
+  height: 20px;
   margin-bottom: 20px;
-  background-color: #e9ecef; /* Ensure a visible background color */
+  background-color: #e9ecef;
   border-radius: 4px;
-  width: 100%; /* Ensure it stretches to fit the container */
+  width: 100%;
 }
 
 .questions {
