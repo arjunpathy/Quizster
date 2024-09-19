@@ -146,11 +146,14 @@
   height: 50px;
   width: 50px;
 }
-.progress {
-  transition: 0.25s;
-  height: 20px;
-  scroll-behavior: smooth;
+.progresss {
+  height: 20px; /* Ensure this is visible */
+  margin-bottom: 20px;
+  background-color: #e9ecef; /* Ensure a visible background color */
+  border-radius: 4px;
+  width: 100%; /* Ensure it stretches to fit the container */
 }
+
 .questions {
   height: 60vh;
   border: 1px solid var(--border-color);
@@ -162,6 +165,7 @@
   margin-bottom: 20px;
   transition: 0.3s ease;
   height: 40%;
+  width: 100%;
   text-align: center;
   margin-top: 5%;
 }
@@ -239,11 +243,11 @@
   color: var(--text-color);
 }
 .borderL {
-  border-left: 1px var(--border-color) solid !important;
-  border-radius: 0 0 20px 0;
+  border-right: 1px var(--border-color) solid !important;
+  border-radius: 0 0 0 20px;
 }
 .borderR {
-  border-radius: 0 0 0 20px;
+  border-radius: 0 0 20px 0;
 }
 
 .lifelineButton:disabled {
@@ -284,11 +288,11 @@
   cursor: pointer;
   margin-top: 10px;
 }
-.toolbar3:hover {
+.lifelineButton:hover, .toolbar3:hover {
   color: var(--text-color);
   background-color: #cec5c51f;
 }
-.result{
+.result {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -297,7 +301,7 @@
   height: 50%;
   width: 50%;
 }
-.gifContainer img{
+.gifContainer img {
   height: 100%;
 }
 

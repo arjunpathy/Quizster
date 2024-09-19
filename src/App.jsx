@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 import "./App.css";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import { useNavigate, Routes, Route } from "react-router-dom";
-import GamePage from "./components/GamePage/GamePage"; 
+import GamePage from "./components/GamePage/GamePage";
 import ResultPage from "./components/Resullt/ResultPage";
 
 function App() {
@@ -63,7 +63,7 @@ function App() {
     } else {
       const queryString = new URLSearchParams(gameDetails).toString();
       localStorage.setItem("gameConfig", queryString);
-      navigate(`/game?${queryString}`);  
+      navigate(`/game?${queryString}`);
     }
   };
 
@@ -80,6 +80,7 @@ function App() {
     <main className="main">
       <div className="description">
         <div className="titleBar">
+
           <div className="titleText">
             <h1>Quizzzter</h1>
           </div>
