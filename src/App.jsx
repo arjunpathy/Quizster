@@ -80,9 +80,8 @@ function App() {
     <main className="main">
       <div className="description">
         <div className="titleBar">
-
           <div className="titleText">
-            <h1>Quizzzter</h1>
+            <h1>Quizster</h1>
           </div>
           <ThemeToggle theme={theme} setTheme={setTheme} />
         </div>
