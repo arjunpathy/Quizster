@@ -174,7 +174,6 @@
   font-size: 2.2rem;
   word-wrap: break-word;
   padding: 10px;
-  /* background-color: #f9f9f9; */
   border-radius: 8px;
 }
 
@@ -288,7 +287,8 @@
   cursor: pointer;
   margin-top: 10px;
 }
-.lifelineButton:hover, .toolbar3:hover {
+.lifelineButton:hover,
+.toolbar3:hover {
   color: var(--text-color);
   background-color: #cec5c51f;
 }
