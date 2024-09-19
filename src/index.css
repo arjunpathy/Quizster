@@ -1,0 +1,54 @@
+:root,
+html[data-bs-theme="light"] {
+  --foreground-color: #fff;
+  --background-color: # ;
+  --text-color: #000;
+  --primary-color: #bb86fc;
+  --secondary-color: #f0f0f0;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --border-color: #8d8d8d;
+  --selected-color: #dddddd;
+}
+
+/* Dark mode variables */
+html[data-bs-theme="dark"] {
+  --foreground-color: #000000;
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #bb86fc;
+  --secondary-color: #333;
+  --border-color: #8d8d8d;
+  --selected-color: #e7e7e7;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--background-color);
+  font-family: var(--font-mono) !important;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: dark;
+  }
+}

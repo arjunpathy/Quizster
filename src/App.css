@@ -1,0 +1,323 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 10rem;
+  min-height: 50vh;
+  background-color: var(--background-color);
+}
+.main h1 {
+  padding: 1rem;
+}
+.titleText {
+  display: flex;
+  flex-grow: 2;
+  justify-content: center;
+}
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 20px 20px 0 0;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.description {
+  text-align: center;
+  font-size: 3rem;
+  width: 100%;
+  max-width: 1090px !important;
+  z-index: 2;
+  font-family: var(--font-mono);
+}
+.errorText {
+  font-size: small;
+  color: red;
+}
+.gameForm {
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  height: fit-content;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  height: 4.5rem;
+}
+
+.formGroup label {
+  font-size: 2rem;
+  flex-basis: 40%;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.gameForm input,
+.gameForminput::after {
+  font-size: 1.5rem;
+  padding: 1% 20px;
+  flex-grow: 1;
+  border-radius: 12px;
+  color: var(--text-color);
+  border-color: var(--text-color);
+  background-color: inherit;
+}
+
+.countsChoice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.countsChoice span {
+  padding: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: border 200ms;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+.countsChoice span:hover {
+  border: 1px solid var(--border-color);
+}
+
+.selectedOption {
+  border: 2px solid var(--text-color) !important;
+  color: var(--background-color) !important;
+  background-color: var(--selected-color) !important;
+}
+
+.categories {
+  font-size: 1.5rem;
+  width: 60%;
+  font-family: var(--font-mono);
+  padding: 6px;
+  height: 4rem;
+  padding-left: 20px;
+  border-color: var(--text-color);
+  background-color: var(--background-color);
+}
+.categories:focus {
+  border-color: var(--text-color);
+}
+.playButton {
+  height: 4rem;
+  width: 20%;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  margin-top: 2rem;
+
+  background: var(--background-color);
+  color: var(--text-color);
+}
+.playButton:hover {
+  color: var(--text-color);
+  background-color: #cec5c51f;
+}
+
+.topbar {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  border-radius: 20px 20px 0 0;
+  border: 1px var(--border-color) solid;
+}
+.emojiIcons {
+  font-size: 2rem;
+  margin-right: 20px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+.progress {
+  transition: 0.25s;
+  height: 20px;
+  scroll-behavior: smooth;
+}
+.questions {
+  height: 60vh;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 1rem 0;
+}
+.questionContainer {
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+  height: 40%;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.questionText {
+  font-size: 2.2rem;
+  word-wrap: break-word;
+  padding: 10px;
+  /* background-color: #f9f9f9; */
+  border-radius: 8px;
+}
+
+.optionsGrid {
+  display: grid;
+  justify-items: center !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+  height: 30%;
+}
+
+.option {
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 90%;
+  word-wrap: break-word;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+.rightAnswer {
+  border: 1px solid darkseagreen;
+  background-color: rgb(77, 126, 77) !important;
+}
+.wrongAnswer {
+  border: 1px solid indianred;
+  background-color: rgb(121, 42, 42) !important;
+}
+.option:hover {
+  border: 2px solid var(--text-color);
+  background-color: var(--primary-color);
+}
+.scores {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.scores span {
+  margin-right: 10px;
+}
+.toolbar {
+  border: 1px solid var(--border-color);
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  font-size: 1.2rem;
+  font-weight: 600;
+  height: 4rem !important;
+  color: var(--text-color);
+}
+.lifelineButton {
+  cursor: pointer;
+  width: 50%;
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  border: none;
+  background-color: inherit;
+  color: var(--text-color);
+}
+.borderL {
+  border-left: 1px var(--border-color) solid !important;
+  border-radius: 0 0 20px 0;
+}
+.borderR {
+  border-radius: 0 0 0 20px;
+}
+
+.lifelineButton:disabled {
+  background-color: gray !important;
+  cursor: not-allowed !important;
+}
+
+.toolbar.show {
+  max-height: 25vh;
+  border: 1px solid #ccc;
+}
+
+.toolbar.hide {
+  max-height: 0;
+  border: none !important;
+}
+
+.toolbar2 Button {
+  transform: rotate(0);
+  transition: transform 0.3s border 0.3s ease-in-out;
+}
+
+.toolbar.hide .toolbar2 Button {
+  transform: rotate(180deg);
+}
+.toolbar3 {
+  border: 1px solid var(--border-color);
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  height: 5rem !important;
+  color: var(--text-color);
+  cursor: pointer;
+  margin-top: 10px;
+}
+.toolbar3:hover {
+  color: var(--text-color);
+  background-color: #cec5c51f;
+}
+.result{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gifContainer {
+  height: 50%;
+  width: 50%;
+}
+.gifContainer img{
+  height: 100%;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+.inputError {
+  border: 2px solid red !important;
+  animation: shake 0.7s ease !important;
+}
