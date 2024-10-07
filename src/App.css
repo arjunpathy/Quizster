@@ -304,7 +304,9 @@
 .gifContainer img {
   height: 100%;
 }
-
+.disabled{
+  cursor: not-allowed;
+}
 @keyframes shake {
   0%,
   100% {

@@ -4,7 +4,7 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import Loader from "../Loader/Loader";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import he from "he";
-import {  ProgressBar } from "react-bootstrap";
+import { ProgressBar } from "react-bootstrap";
 
 const SECONDS = 20;
 
@@ -89,29 +89,33 @@ const GamePage = () => {
   };
 
   const fiftyFifty = () => {
-    const currentQuestion = questions[index];
-    const indexes = currentQuestion.options
-      .map((ans, ind) => (ans !== currentQuestion.correctAnswer ? ind : null))
-      .filter((ind) => ind !== null);
+    if (!lifelines.half) {
+      const currentQuestion = questions[index];
+      const indexes = currentQuestion.options
+        .map((ans, ind) => (ans !== currentQuestion.correctAnswer ? ind : null))
+        .filter((ind) => ind !== null);
 
-    const randomIndexToKeep =
-      indexes[Math.floor(Math.random() * indexes.length)];
+      const randomIndexToKeep =
+        indexes[Math.floor(Math.random() * indexes.length)];
 
-    const updatedOptions = currentQuestion.options.map((option, ind) =>
-      ind === randomIndexToKeep || option === currentQuestion.correctAnswer
-        ? option
-        : ""
-    );
+      const updatedOptions = currentQuestion.options.map((option, ind) =>
+        ind === randomIndexToKeep || option === currentQuestion.correctAnswer
+          ? option
+          : ""
+      );
 
-    setQuestions((prev) =>
-      prev.map((q, i) => (i === index ? { ...q, options: updatedOptions } : q))
-    );
-    setLifelines((prev) => ({ ...prev, half: true }));
-    setScore((score) => score - 0.5);
+      setQuestions((prev) =>
+        prev.map((q, i) =>
+          i === index ? { ...q, options: updatedOptions } : q
+        )
+      );
+      setLifelines((prev) => ({ ...prev, half: true }));
+      setScore((score) => score - 0.5);
+    }
   };
 
   const replaceQuestion = () => {
-    if (index < questions.length - 1) {
+    if (!lifelines.skip && index < questions.length - 1) {
       setQuestions((prev) => {
         const updatedQuestions = [...prev];
         updatedQuestions[index] = prev[prev.length - 1];
@@ -212,16 +216,19 @@ const GamePage = () => {
       </div>
       <div className="toolbar">
         <span
-          className="lifelineButton borderL"
+          className={`lifelineButton borderL ${
+            lifelines.half ? "disabled" : ""
+          }`}
           disabled={lifelines.half}
-          role="button"
           onClick={fiftyFifty}
           title="Remove 2 wrong answers for 0.5 points"
         >
           50 / 50
         </span>
         <span
-          className="lifelineButton borderR"
+          className={`lifelineButton borderR ${
+            lifelines.skip ? "disabled" : ""
+          } `}
           disabled={lifelines.skip}
           onClick={replaceQuestion}
           title="Swap this question for a new one for 1 point"
